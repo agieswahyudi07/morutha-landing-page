@@ -1,0 +1,56 @@
+---
+// Icon helper component that maps icon names to Lucide components
+import {
+  Smile,
+  Footprints,
+  Palette,
+  ShieldCheck,
+  Leaf,
+  Truck,
+  Award,
+  FlaskConical,
+  Zap,
+  Clock,
+  ArrowUpRight,
+  MessageCircle,
+  ArrowRight,
+  Facebook,
+  Instagram,
+} from '@lucide/astro';
+
+interface Props {
+  name: string;
+  size?: number;
+  class?: string;
+}
+
+const { name, size = 24, class: className = "" } = Astro.props;
+
+// Map icon names to their components
+const iconMap: Record<string, any> = {
+  'smile': Smile,
+  'footprints': Footprints,
+  'palette': Palette,
+  'shield-check': ShieldCheck,
+  'leaf': Leaf,
+  'truck': Truck,
+  'award': Award,
+  'flask-conical': FlaskConical,
+  'zap': Zap,
+  'clock': Clock,
+  'arrow-up-right': ArrowUpRight,
+  'message-circle': MessageCircle,
+  'arrow-right': ArrowRight,
+  'facebook': Facebook,
+  'instagram': Instagram,
+};
+
+const IconComponent = iconMap[name];
+
+if (!IconComponent) {
+  console.warn(`Icon "${name}" not found in iconMap`);
+}
+---
+
+{IconComponent && <IconComponent size={size} class={className} />}
+

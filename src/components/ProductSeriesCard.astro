@@ -1,0 +1,95 @@
+---
+import { Image } from 'astro:assets';
+import { Heart, ShoppingCart, Image as ImageIcon } from '@lucide/astro';
+import type { ProductSeries } from '../data/products';
+
+interface Props {
+  series: ProductSeries;
+}
+
+// Helper function to get color value
+function getColorValue(color: string): string {
+  const colorMap: Record<string, string> = {
+    'black': '#000000',
+    'navy': '#001f3f',
+    'army': '#4b5320',
+    'green': '#4b5320',
+    'tan': '#d2b48c',
+    'camel': '#c19a6b',
+    'khaki': '#c3b091',
+    'grey': '#808080',
+    'pink': '#ffc0cb',
+    'blue': '#0000ff',
+    'brown': '#8b4513',
+  };
+  return colorMap[color] || '#cccccc';
+}
+
+const { series } = Astro.props;
+const featuredVariant = series.colorVariants.find(v => v.id.includes(series.featuredColor || 'black')) || series.colorVariants[0];
+const featuredImage = featuredVariant?.featuredImage;
+---
+
+<a href={`/products/${series.id}`} class="block group relative bg-white rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-xl border border-gray-100 fade-in">
+  <div class="relative aspect-square overflow-hidden bg-gray-50 p-6 flex items-center justify-center">
+    {series.tag && (
+      <div class="absolute top-4 left-4 z-10">
+        <span class="bg-orange-400 text-white text-[10px] font-bold px-2 py-1 rounded shadow-sm">
+          {series.tag}
+        </span>
+      </div>
+    )}
+    <button class="absolute top-4 right-4 z-10 p-2 bg-white rounded-full shadow-sm text-gray-400 hover:text-red-500 transition-colors">
+      <Heart size={16} />
+    </button>
+    
+    {featuredImage ? (
+      <Image 
+        src={featuredImage}
+        alt={`${series.name} - ${featuredVariant.name}`}
+        width={800}
+        height={800}
+        class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+        loading="lazy"
+        format="webp"
+        quality={85}
+      />
+    ) : (
+      <div class="w-full h-full flex items-center justify-center text-gray-400">
+        <ImageIcon size={48} />
+      </div>
+    )}
+  </div>
+  
+  <div class="p-6">
+    <h3 class="text-lg font-bold text-gray-900">{series.name}</h3>
+    <p class="text-sm text-gray-500 mb-3">{series.description}</p>
+    
+    <!-- Color Variants -->
+    <div class="flex gap-2 mb-4 flex-wrap">
+      {series.colorVariants.slice(0, 5).map((variant) => (
+        <div 
+          key={variant.id}
+          class="w-6 h-6 rounded-full border-2 border-gray-200 hover:border-[#00a8a8] transition-colors cursor-pointer"
+          style={`background-color: ${getColorValue(variant.color)}`}
+          title={variant.name}
+        ></div>
+      ))}
+      {series.colorVariants.length > 5 && (
+        <div class="w-6 h-6 rounded-full border-2 border-gray-200 flex items-center justify-center text-[10px] font-bold text-gray-500">
+          +{series.colorVariants.length - 5}
+        </div>
+      )}
+    </div>
+    
+    <div class="flex justify-between items-center">
+      <!-- Price hidden temporarily -->
+      <!-- <span class="text-[#00a8a8] font-bold">
+        IDR {(series.price / 1000).toFixed(0)}k
+      </span> -->
+      <button class="p-2.5 bg-teal-50 text-[#00a8a8] rounded-xl hover:bg-[#00a8a8] hover:text-white transition-all ml-auto">
+        <ShoppingCart size={20} />
+      </button>
+    </div>
+  </div>
+</a>

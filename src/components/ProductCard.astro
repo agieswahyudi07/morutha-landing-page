@@ -1,0 +1,61 @@
+---
+import { Image } from 'astro:assets';
+import { Heart, ShoppingCart } from '@lucide/astro';
+import type { Product } from '../data/constants';
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+---
+
+<div class="group relative bg-white rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-xl border border-gray-100 fade-in">
+  <div class="relative aspect-square overflow-hidden bg-gray-50 p-6 flex items-center justify-center">
+    {product.tag && (
+      <div class="absolute top-4 left-4 z-10">
+        <span class="bg-orange-400 text-white text-[10px] font-bold px-2 py-1 rounded shadow-sm">
+          {product.tag}
+        </span>
+      </div>
+    )}
+    <button class="absolute top-4 right-4 z-10 p-2 bg-white rounded-full shadow-sm text-gray-400 hover:text-red-500 transition-colors">
+      <Heart size={16} />
+    </button>
+    {typeof product.image === 'string' && product.image.startsWith('http') ? (
+      <img 
+        src={product.image} 
+        alt={product.name}
+        class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+        loading="lazy"
+      />
+    ) : (
+      <Image 
+        src={product.image}
+        alt={product.name}
+        width={800}
+        height={800}
+        class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+        loading="lazy"
+        format="webp"
+        quality={85}
+      />
+    )}
+  </div>
+  
+  <div class="p-6">
+    <h3 class="text-lg font-bold text-gray-900">{product.name}</h3>
+    <p class="text-sm text-gray-500 mb-4">{product.description}</p>
+    
+    <div class="flex justify-between items-center">
+      <!-- Price hidden temporarily -->
+      <!-- <span class="text-[#00a8a8] font-bold">
+        IDR {(product.price / 1000).toFixed(0)}k
+      </span> -->
+      <button class="p-2.5 bg-teal-50 text-[#00a8a8] rounded-xl hover:bg-[#00a8a8] hover:text-white transition-all ml-auto">
+        <ShoppingCart size={20} />
+      </button>
+    </div>
+  </div>
+</div>
+

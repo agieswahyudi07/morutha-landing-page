@@ -1,0 +1,189 @@
+---
+import Navigation from '../../components/Navigation.astro';
+import ProductSeriesCard from '../../components/ProductSeriesCard.astro';
+import Logo from '../../components/Logo.astro';
+import { CheckCircle, Palette, Image as ImageIcon, MessageCircle, ArrowLeft, Instagram } from '@lucide/astro';
+import { PRODUCT_SERIES } from '../../data/products';
+import '../../styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/webp" href="/logo.webp" />
+    <link rel="apple-touch-icon" href="/logo.webp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Jelajahi semua seri sandal, sepatu, dan pakaian Morutha. 10 koleksi unik dengan berbagai varian warna." />
+    <title>Semua Produk - Morutha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="min-h-screen flex flex-col text-gray-800 overflow-x-hidden">
+    <Navigation />
+    
+    <!-- Header - Enhanced -->
+    <section class="bg-[#F9F7F2] py-16 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center space-y-6 fade-in">
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900">Koleksi Lengkap Kami</h1>
+          <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Jelajahi semua 10 seri, masing-masing dengan berbagai varian warna. Temukan sandal, sepatu, dan pakaian yang sempurna untuk si kecil.
+          </p>
+          <div class="flex items-center justify-center gap-6 pt-4">
+            <div class="flex items-center gap-2 text-sm text-gray-600">
+              <CheckCircle size={20} class="text-[#00a8a8]" />
+              <span>{PRODUCT_SERIES.length} Seri</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm text-gray-600">
+              <Palette size={20} class="text-[#00a8a8]" />
+              <span>50+ Varian Warna</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm text-gray-600">
+              <ImageIcon size={20} class="text-[#00a8a8]" />
+              <span>250+ Foto</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- All Products Grid - Enhanced -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="mb-12 fade-in">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+            <div>
+              <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Semua Seri</h2>
+              <p class="text-gray-500">Jelajahi koleksi lengkap kami</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-sm text-gray-500 font-medium">{PRODUCT_SERIES.length} Seri Tersedia</span>
+              <div class="h-6 w-px bg-gray-300"></div>
+              <span class="text-sm text-gray-500 font-medium">
+                {PRODUCT_SERIES.reduce((sum, s) => sum + s.colorVariants.length, 0)} Warna
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+          {PRODUCT_SERIES.map((series, idx) => (
+            <div class="fade-in" style={`animation-delay: ${idx * 50}ms`}>
+              <ProductSeriesCard series={series} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-teal-50/30">
+      <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">Tidak Menemukan Yang Anda Cari?</h2>
+        <p class="text-lg text-gray-600">
+          Hubungi kami langsung dan kami akan membantu Anda menemukan produk yang sempurna untuk si kecil.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a 
+            href="https://wa.me/6288220168168" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-[#25D366] hover:bg-[#128C7E] text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 transition-all shadow-lg hover:-translate-y-0.5"
+          >
+            <MessageCircle size={20} />
+            Chat WhatsApp
+          </a>
+          <a 
+            href="/"
+            class="bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-200 px-8 py-4 rounded-full font-bold flex items-center gap-2 transition-all"
+          >
+            <ArrowLeft size={20} />
+            Kembali ke Beranda
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100 pt-20 pb-10 mt-auto">
+      <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12 mb-20">
+        <div class="space-y-6">
+          <Logo className="!items-start" />
+          <p class="text-sm text-gray-400 font-medium leading-relaxed">
+            Thoughtfully designed footwear for the most precious little feet.
+          </p>
+        </div>
+        
+        <div class="space-y-6">
+          <h4 class="font-bold text-gray-900 uppercase tracking-widest text-[10px]">Belanja</h4>
+          <ul class="space-y-4 text-sm font-medium text-gray-500">
+            <li><a href="/products" class="hover:text-[#00a8a8] transition-colors">Semua Produk</a></li>
+            <li><a href="/" class="hover:text-[#00a8a8] transition-colors">Beranda</a></li>
+          </ul>
+        </div>
+        
+        <div class="space-y-6">
+          <h4 class="font-bold text-gray-900 uppercase tracking-widest text-[10px]">Bantuan</h4>
+          <ul class="space-y-4 text-sm font-medium text-gray-500">
+            <li><a href="#" class="hover:text-[#00a8a8] transition-colors">Panduan Ukuran</a></li>
+            <li><a href="#" class="hover:text-[#00a8a8] transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div class="space-y-6">
+          <h4 class="font-bold text-gray-900 uppercase tracking-widest text-[10px]">Ikuti Kami</h4>
+          <div class="flex gap-4">
+            <a href="https://www.instagram.com/morutha.id" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-pink-500 transition-all hover:border-pink-500">
+              <Instagram size={20} />
+            </a>
+            <a href="https://www.tiktok.com/@morutha" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-black transition-all hover:border-black">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 8.5c0 .5-.5 1-1 1h-3c-.5 0-1-.5-1-1V5.5c0-.5.5-1 1-1h3c.5 0 1 .5 1 1v3z"/>
+                <path d="M9 12a3 3 0 1 0 6 0 3 3 0 1 0-6 0z"/>
+                <path d="M9 12V8.5c0-.5.5-1 1-1h4c.5 0 1 .5 1 1V12"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="max-w-7xl mx-auto px-4 pt-10 border-t border-gray-100 flex flex-wrap justify-between gap-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+        <p>© 2025 Morutha Kids Footwear. All rights reserved.</p>
+        <div class="flex gap-8">
+          <a href="#" class="hover:text-gray-900 transition-colors">Privasi</a>
+          <a href="#" class="hover:text-gray-900 transition-colors">Syarat</a>
+        </div>
+      </div>
+    </footer>
+
+    <script is:inline>
+      (function() {
+        function initScrollAnimations() {
+          const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+          };
+
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+              }
+            });
+          }, observerOptions);
+
+          document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+          });
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initScrollAnimations);
+        } else {
+          initScrollAnimations();
+        }
+      })();
+    </script>
+  </body>
+</html>

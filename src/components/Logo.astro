@@ -1,0 +1,23 @@
+---
+interface Props {
+  className?: string;
+  iconOnly?: boolean;
+}
+
+const { className = "", iconOnly = false } = Astro.props;
+---
+
+<a href="/" class={`flex items-center gap-2 ${className} transition-opacity hover:opacity-80`}>
+  <img 
+    src="/logo.webp" 
+    alt="Morutha Logo" 
+    class="w-12 h-12 rounded-xl shadow-sm object-cover"
+    loading="eager"
+  />
+  {!iconOnly && (
+    <span class="text-2xl font-bold tracking-tight text-[#00a8a8] font-display lowercase" style="letter-spacing: -0.02em">
+      morutha
+    </span>
+  )}
+</a>
+
