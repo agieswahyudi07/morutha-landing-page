@@ -31,6 +31,13 @@ body {
   transform: translateY(0);
 }
 
+/* Progressive enhancement: if IntersectionObserver is not supported, show all elements */
+.no-js .fade-in,
+.fade-in.no-intersection-observer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
