@@ -6,13 +6,38 @@ import IconHelper from '../components/IconHelper.astro';
 import { Image } from 'astro:assets';
 import { ArrowUpRight, MessageCircle, ArrowRight, Instagram } from '@lucide/astro';
 import { FEATURES, VALUE_PROPS, TRUST_BAR } from '../data/constants';
-import { getFeaturedProducts } from '../data/products';
+import { getAllCategories, getProductsByCategoryWithUniqueColors } from '../data/products';
 import { MODEL_IMAGES } from '../data/models';
 import '../styles/global.css';
 import { initScrollAnimations } from '../scripts/scroll-animations';
 
-// Get featured product series (first 6)
-const featuredSeries = getFeaturedProducts(6);
+// Get products by category with limits
+const categories = getAllCategories();
+const categoryLimits: Record<string, number> = {
+  'sandal': 8,
+  'kaos': 4,
+  'sepatu': 8,
+  'pakaian': 8,
+  'aksesoris': 8
+};
+
+const productsByCategory = categories.map(category => {
+  const allProducts = getProductsByCategoryWithUniqueColors(category);
+  const limit = categoryLimits[category] || allProducts.length;
+  return {
+    category,
+    products: allProducts.slice(0, limit)
+  };
+});
+
+// Category display names
+const categoryNames: Record<string, string> = {
+  'sandal': 'Sandal',
+  'sepatu': 'Sepatu',
+  'kaos': 'Kaos',
+  'pakaian': 'Pakaian',
+  'aksesoris': 'Aksesoris'
+};
 
 // Get model images
 const heroModelImage = MODEL_IMAGES[0]?.image || null;
@@ -160,24 +185,35 @@ const lifestyleImages = MODEL_IMAGES.slice(0, 3);
       </div>
     </section>
 
-    <!-- Product Series Grid -->
+    <!-- Product Series Grid by Category -->
     <section id="shop" class="py-24 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4">
         <div class="flex justify-between items-end mb-12 fade-in">
           <div class="space-y-2">
             <h2 class="text-4xl font-bold text-gray-900">Koleksi Kami</h2>
-            <p class="text-gray-500 font-medium">10 seri unik, masing-masing dengan berbagai varian warna.</p>
+            <p class="text-gray-500 font-medium">Berbagai kategori produk untuk si kecil.</p>
           </div>
             <a href="/products" class="flex items-center gap-1 text-[#00a8a8] font-bold hover:gap-2 transition-all">
               Lihat Semua Seri <ArrowRight size={20} />
             </a>
         </div>
         
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {featuredSeries.map((series) => (
-            <ProductSeriesCard key={series.id} series={series} />
-          ))}
-        </div>
+        {productsByCategory.map(({ category, products }) => (
+          <div class="mb-16 last:mb-0 fade-in">
+            <div class="flex justify-between items-center mb-8">
+              <div>
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-900">{categoryNames[category] || category}</h3>
+                <p class="text-gray-500 text-sm mt-1">{products.length} produk tersedia</p>
+              </div>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              {products.map((series) => (
+                <ProductSeriesCard key={series.id} series={series} />
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
 
@@ -356,11 +392,18 @@ const lifestyleImages = MODEL_IMAGES.slice(0, 3);
         </div>
       </div>
       
-      <div class="max-w-7xl mx-auto px-4 pt-10 border-t border-gray-100 flex flex-wrap justify-between gap-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-        <p>© 2025 Morutha. Hak cipta dilindungi.</p>
-        <div class="flex gap-8">
-          <a href="#" class="hover:text-gray-900 transition-colors">Privasi</a>
-          <a href="#" class="hover:text-gray-900 transition-colors">Syarat</a>
+      <div class="max-w-7xl mx-auto px-4 pt-10 border-t border-gray-100">
+        <div class="flex flex-wrap justify-between gap-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">
+          <p>© 2025 Morutha. Hak cipta dilindungi.</p>
+          <div class="flex gap-8">
+            <a href="#" class="hover:text-gray-900 transition-colors">Privasi</a>
+            <a href="#" class="hover:text-gray-900 transition-colors">Syarat</a>
+          </div>
+        </div>
+        <div class="text-center">
+          <p class="text-[9px] text-gray-300 font-normal lowercase tracking-normal">
+            Developed by <a href="https://landingo.id" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#00a8a8] transition-colors underline">Landingo</a>
+          </p>
         </div>
       </div>
     </footer>

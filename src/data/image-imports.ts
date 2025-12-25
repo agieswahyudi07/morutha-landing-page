@@ -1,5 +1,5 @@
 // Auto-generated image imports
-// Generated on: 2025-12-24T18:11:32.714Z
+// Generated on: 2025-12-25T07:12:14.164Z
 // DO NOT EDIT MANUALLY - Run: node scripts/generate-image-imports.js
 
 // Model Images
@@ -11,6 +11,26 @@ import model_dscf6198_w from '../images/model/DSCF6198-W.jpg';
 import model_dscf6240_w from '../images/model/DSCF6240-W.jpg';
 
 // Product Images
+import products_goru_army_1 from '../images/products/goru/army/1.png';
+import products_goru_army_2 from '../images/products/goru/army/2.png';
+import products_goru_army_3 from '../images/products/goru/army/3.png';
+import products_goru_army_4 from '../images/products/goru/army/4.png';
+import products_goru_army_5 from '../images/products/goru/army/5.png';
+import products_goru_black_1 from '../images/products/goru/black/1.png';
+import products_goru_black_2 from '../images/products/goru/black/2.png';
+import products_goru_black_3 from '../images/products/goru/black/3.png';
+import products_goru_black_4 from '../images/products/goru/black/4.png';
+import products_goru_black_5 from '../images/products/goru/black/5.png';
+import products_goru_blue_1 from '../images/products/goru/blue/1.png';
+import products_goru_blue_2 from '../images/products/goru/blue/2.png';
+import products_goru_blue_3 from '../images/products/goru/blue/3.png';
+import products_goru_blue_4 from '../images/products/goru/blue/4.png';
+import products_goru_blue_5 from '../images/products/goru/blue/5.png';
+import products_goru_red_1 from '../images/products/goru/red/1.png';
+import products_goru_red_2 from '../images/products/goru/red/2.png';
+import products_goru_red_3 from '../images/products/goru/red/3.png';
+import products_goru_red_4 from '../images/products/goru/red/4.png';
+import products_goru_red_5 from '../images/products/goru/red/5.png';
 import products_haruki_2_haruki_black_1 from '../images/products/haruki/2 Haruki Black/1.png';
 import products_haruki_2_haruki_black_2 from '../images/products/haruki/2 Haruki Black/2.png';
 import products_haruki_2_haruki_black_3 from '../images/products/haruki/2 Haruki Black/3.png';
@@ -76,6 +96,11 @@ import products_hikaru_hikaru_tan_template_logo_morutha_2 from '../images/produc
 import products_hikaru_hikaru_tan_template_logo_morutha_3 from '../images/products/hikaru/Hikaru Tan/Template Logo morutha 3.jpg';
 import products_hikaru_hikaru_tan_template_logo_morutha_4 from '../images/products/hikaru/Hikaru Tan/Template Logo morutha 4.jpg';
 import products_hikaru_hikaru_tan_template_logo_morutha_5 from '../images/products/hikaru/Hikaru Tan/Template Logo morutha 5.jpg';
+import products_hiro_tan_1 from '../images/products/hiro/tan/1.png';
+import products_hiro_tan_2 from '../images/products/hiro/tan/2.png';
+import products_hiro_tan_3 from '../images/products/hiro/tan/3.png';
+import products_hiro_tan_4 from '../images/products/hiro/tan/4.png';
+import products_hiro_tan_5 from '../images/products/hiro/tan/5.png';
 import products_junko_army_1 from '../images/products/junko/army/1.png';
 import products_junko_army_2 from '../images/products/junko/army/2.png';
 import products_junko_army_3 from '../images/products/junko/army/3.png';
@@ -129,6 +154,36 @@ import products_kaiketsu_kaiketsu_tan_3 from '../images/products/kaiketsu/Kaiket
 import products_kaiketsu_kaiketsu_tan_4_1 from '../images/products/kaiketsu/Kaiketsu Tan/4-1.png';
 import products_kaiketsu_kaiketsu_tan_4 from '../images/products/kaiketsu/Kaiketsu Tan/4.png';
 import products_kaiketsu_kaiketsu_tan_5 from '../images/products/kaiketsu/Kaiketsu Tan/5.png';
+import products_kaizen_army_1 from '../images/products/kaizen/army/1.png';
+import products_kaizen_army_2 from '../images/products/kaizen/army/2.png';
+import products_kaizen_army_3 from '../images/products/kaizen/army/3.png';
+import products_kaizen_army_4 from '../images/products/kaizen/army/4.png';
+import products_kaizen_army_5 from '../images/products/kaizen/army/5.png';
+import products_kaizen_black_1 from '../images/products/kaizen/black/1.png';
+import products_kaizen_black_2 from '../images/products/kaizen/black/2.png';
+import products_kaizen_black_3 from '../images/products/kaizen/black/3.png';
+import products_kaizen_black_4 from '../images/products/kaizen/black/4.png';
+import products_kaizen_black_5 from '../images/products/kaizen/black/5.png';
+import products_kaizen_blue_1 from '../images/products/kaizen/blue/1.png';
+import products_kaizen_blue_2 from '../images/products/kaizen/blue/2.png';
+import products_kaizen_blue_3 from '../images/products/kaizen/blue/3.png';
+import products_kaizen_blue_4 from '../images/products/kaizen/blue/4.png';
+import products_kaizen_blue_5 from '../images/products/kaizen/blue/5.png';
+import products_kaizen_red_1 from '../images/products/kaizen/red/1.png';
+import products_kaizen_red_2 from '../images/products/kaizen/red/2.png';
+import products_kaizen_red_3 from '../images/products/kaizen/red/3.png';
+import products_kaizen_red_4 from '../images/products/kaizen/red/4.png';
+import products_kaizen_red_5 from '../images/products/kaizen/red/5.png';
+import products_kaizen_tan_1 from '../images/products/kaizen/tan/1.png';
+import products_kaizen_tan_2 from '../images/products/kaizen/tan/2.png';
+import products_kaizen_tan_3 from '../images/products/kaizen/tan/3.png';
+import products_kaizen_tan_4 from '../images/products/kaizen/tan/4.png';
+import products_kaizen_tan_5 from '../images/products/kaizen/tan/5.png';
+import products_kaizen_tosca_1 from '../images/products/kaizen/tosca/1.png';
+import products_kaizen_tosca_2 from '../images/products/kaizen/tosca/2.png';
+import products_kaizen_tosca_3 from '../images/products/kaizen/tosca/3.png';
+import products_kaizen_tosca_4 from '../images/products/kaizen/tosca/4.png';
+import products_kaizen_tosca_5 from '../images/products/kaizen/tosca/5.png';
 import products_kanji_army_id_11134207_7qul1_lhfyiaz773sg0b_resize_w900_nl from '../images/products/kanji/army/id-11134207-7qul1-lhfyiaz773sg0b@resize_w900_nl.webp';
 import products_kanji_army_id_11134207_7qul2_lhfyiaz75p80ca_resize_w900_nl from '../images/products/kanji/army/id-11134207-7qul2-lhfyiaz75p80ca@resize_w900_nl.webp';
 import products_kanji_army_id_11134207_7qul9_lht69pq9ch6cb0_resize_w900_nl from '../images/products/kanji/army/id-11134207-7qul9-lht69pq9ch6cb0@resize_w900_nl.webp';
@@ -149,6 +204,51 @@ import products_kanji_tan_morutha_6_b from '../images/products/kanji/tan/Morutha
 import products_kanji_tan_morutha_6_c from '../images/products/kanji/tan/Morutha-6-C.jpg';
 import products_kanji_tan_morutha_6_d from '../images/products/kanji/tan/Morutha-6-D.jpg';
 import products_kanji_tan_morutha_6_e from '../images/products/kanji/tan/Morutha-6-E.jpg';
+import products_kaos_chio_blue_1 from '../images/products/kaos-chio/blue/1.png';
+import products_kaos_chio_blue_2 from '../images/products/kaos-chio/blue/2.png';
+import products_kaos_chio_blue_untitled_1artboard_3 from '../images/products/kaos-chio/blue/Untitled-1Artboard 3.jpg';
+import products_kaos_chio_blue_untitled_1artboard_4 from '../images/products/kaos-chio/blue/Untitled-1Artboard 4.jpg';
+import products_kaos_chio_blue_untitled_1artboard_5 from '../images/products/kaos-chio/blue/Untitled-1Artboard 5.jpg';
+import products_kaos_chio_yellow_1 from '../images/products/kaos-chio/yellow/1.png';
+import products_kaos_chio_yellow_2 from '../images/products/kaos-chio/yellow/2.png';
+import products_kaos_chio_yellow_untitled_1artboard_3 from '../images/products/kaos-chio/yellow/Untitled-1Artboard 3.jpg';
+import products_kaos_chio_yellow_untitled_1artboard_4 from '../images/products/kaos-chio/yellow/Untitled-1Artboard 4.jpg';
+import products_kaos_chio_yellow_untitled_1artboard_5 from '../images/products/kaos-chio/yellow/Untitled-1Artboard 5.jpg';
+import products_kaos_daiki_brown_1 from '../images/products/kaos-daiki/brown/1.png';
+import products_kaos_daiki_brown_2 from '../images/products/kaos-daiki/brown/2.png';
+import products_kaos_daiki_brown_untitled_1artboard_3 from '../images/products/kaos-daiki/brown/Untitled-1Artboard 3.jpg';
+import products_kaos_daiki_brown_untitled_1artboard_4 from '../images/products/kaos-daiki/brown/Untitled-1Artboard 4.jpg';
+import products_kaos_daiki_brown_untitled_1artboard_5 from '../images/products/kaos-daiki/brown/Untitled-1Artboard 5.jpg';
+import products_kaos_daiki_red_1 from '../images/products/kaos-daiki/red/1.png';
+import products_kaos_daiki_red_2 from '../images/products/kaos-daiki/red/2.png';
+import products_kaos_daiki_red_untitled_1artboard_3 from '../images/products/kaos-daiki/red/Untitled-1Artboard 3.jpg';
+import products_kaos_daiki_red_untitled_1artboard_4 from '../images/products/kaos-daiki/red/Untitled-1Artboard 4.jpg';
+import products_kaos_daiki_red_untitled_1artboard_5 from '../images/products/kaos-daiki/red/Untitled-1Artboard 5.jpg';
+import products_kaos_daiki_steel_blue_1 from '../images/products/kaos-daiki/steel-blue/1.png';
+import products_kaos_daiki_steel_blue_2 from '../images/products/kaos-daiki/steel-blue/2.png';
+import products_kaos_daiki_steel_blue_untitled_1artboard_3 from '../images/products/kaos-daiki/steel-blue/Untitled-1Artboard 3.jpg';
+import products_kaos_daiki_steel_blue_untitled_1artboard_4 from '../images/products/kaos-daiki/steel-blue/Untitled-1Artboard 4.jpg';
+import products_kaos_daiki_steel_blue_untitled_1artboard_5 from '../images/products/kaos-daiki/steel-blue/Untitled-1Artboard 5.jpg';
+import products_kaos_fumio_white_1 from '../images/products/kaos-fumio/white/1.png';
+import products_kaos_fumio_white_2 from '../images/products/kaos-fumio/white/2.png';
+import products_kaos_fumio_white_untitled_1artboard_3 from '../images/products/kaos-fumio/white/Untitled-1Artboard 3.jpg';
+import products_kaos_fumio_white_untitled_1artboard_4 from '../images/products/kaos-fumio/white/Untitled-1Artboard 4.jpg';
+import products_kaos_fumio_white_untitled_1artboard_5 from '../images/products/kaos-fumio/white/Untitled-1Artboard 5.jpg';
+import products_kaos_ken_blue_green_1 from '../images/products/kaos-ken/blue-green/1.png';
+import products_kaos_ken_blue_green_2 from '../images/products/kaos-ken/blue-green/2.png';
+import products_kaos_ken_blue_green_untitled_1artboard_3 from '../images/products/kaos-ken/blue-green/Untitled-1Artboard 3.jpg';
+import products_kaos_ken_blue_green_untitled_1artboard_4 from '../images/products/kaos-ken/blue-green/Untitled-1Artboard 4.jpg';
+import products_kaos_ken_blue_green_untitled_1artboard_5 from '../images/products/kaos-ken/blue-green/Untitled-1Artboard 5.jpg';
+import products_kaos_kibatsu_black_1 from '../images/products/kaos-kibatsu/black/1.png';
+import products_kaos_kibatsu_black_2 from '../images/products/kaos-kibatsu/black/2.png';
+import products_kaos_kibatsu_black_untitled_1artboard_3 from '../images/products/kaos-kibatsu/black/Untitled-1Artboard 3.jpg';
+import products_kaos_kibatsu_black_untitled_1artboard_4 from '../images/products/kaos-kibatsu/black/Untitled-1Artboard 4.jpg';
+import products_kaos_kibatsu_black_untitled_1artboard_5 from '../images/products/kaos-kibatsu/black/Untitled-1Artboard 5.jpg';
+import products_kaos_kibatsu_maroon_1 from '../images/products/kaos-kibatsu/maroon/1.png';
+import products_kaos_kibatsu_maroon_2 from '../images/products/kaos-kibatsu/maroon/2.png';
+import products_kaos_kibatsu_maroon_untitled_1artboard_3 from '../images/products/kaos-kibatsu/maroon/Untitled-1Artboard 3.jpg';
+import products_kaos_kibatsu_maroon_untitled_1artboard_4 from '../images/products/kaos-kibatsu/maroon/Untitled-1Artboard 4.jpg';
+import products_kaos_kibatsu_maroon_untitled_1artboard_5 from '../images/products/kaos-kibatsu/maroon/Untitled-1Artboard 5.jpg';
 import products_keiko_army_1 from '../images/products/keiko/army/1.png';
 import products_keiko_army_2 from '../images/products/keiko/army/2.png';
 import products_keiko_army_3 from '../images/products/keiko/army/3.png';
@@ -254,6 +354,21 @@ import products_yuki_yuki_khaky_2_2_ from '../images/products/yuki/Yuki Khaky/2 
 import products_yuki_yuki_khaky_3_2_ from '../images/products/yuki/Yuki Khaky/3 (2).jpg';
 import products_yuki_yuki_khaky_4_2_ from '../images/products/yuki/Yuki Khaky/4 (2).jpg';
 import products_yuki_yuki_khaky_5_4_1_ from '../images/products/yuki/Yuki Khaky/5 (4) (1).jpg';
+import products_zero_blue_1 from '../images/products/zero/blue/1.png';
+import products_zero_blue_2 from '../images/products/zero/blue/2.png';
+import products_zero_blue_3 from '../images/products/zero/blue/3.png';
+import products_zero_blue_4 from '../images/products/zero/blue/4.png';
+import products_zero_blue_5 from '../images/products/zero/blue/5.png';
+import products_zero_red_1 from '../images/products/zero/red/1.png';
+import products_zero_red_2 from '../images/products/zero/red/2.png';
+import products_zero_red_3 from '../images/products/zero/red/3.png';
+import products_zero_red_4 from '../images/products/zero/red/4.png';
+import products_zero_red_5 from '../images/products/zero/red/5.png';
+import products_zero_tosca_1 from '../images/products/zero/tosca/1.png';
+import products_zero_tosca_2 from '../images/products/zero/tosca/2.png';
+import products_zero_tosca_3 from '../images/products/zero/tosca/3.png';
+import products_zero_tosca_4 from '../images/products/zero/tosca/4.png';
+import products_zero_tosca_5 from '../images/products/zero/tosca/5.png';
 
 // Exports
 export const modelImages = [
@@ -266,6 +381,36 @@ export const modelImages = [
 ];
 
 export const productImages = {
+  goru: {
+    'army': [
+      products_goru_army_1,
+      products_goru_army_2,
+      products_goru_army_3,
+      products_goru_army_4,
+      products_goru_army_5,
+    ],
+    'black': [
+      products_goru_black_1,
+      products_goru_black_2,
+      products_goru_black_3,
+      products_goru_black_4,
+      products_goru_black_5,
+    ],
+    'blue': [
+      products_goru_blue_1,
+      products_goru_blue_2,
+      products_goru_blue_3,
+      products_goru_blue_4,
+      products_goru_blue_5,
+    ],
+    'red': [
+      products_goru_red_1,
+      products_goru_red_2,
+      products_goru_red_3,
+      products_goru_red_4,
+      products_goru_red_5,
+    ],
+  },
   haruki: {
     'haruki_black': [
       products_haruki_2_haruki_black_1,
@@ -359,6 +504,15 @@ export const productImages = {
       products_hikaru_hikaru_tan_template_logo_morutha_5,
     ],
   },
+  hiro: {
+    'tan': [
+      products_hiro_tan_1,
+      products_hiro_tan_2,
+      products_hiro_tan_3,
+      products_hiro_tan_4,
+      products_hiro_tan_5,
+    ],
+  },
   junko: {
     'army': [
       products_junko_army_1,
@@ -436,6 +590,50 @@ export const productImages = {
       products_kaiketsu_kaiketsu_tan_5,
     ],
   },
+  kaizen: {
+    'army': [
+      products_kaizen_army_1,
+      products_kaizen_army_2,
+      products_kaizen_army_3,
+      products_kaizen_army_4,
+      products_kaizen_army_5,
+    ],
+    'black': [
+      products_kaizen_black_1,
+      products_kaizen_black_2,
+      products_kaizen_black_3,
+      products_kaizen_black_4,
+      products_kaizen_black_5,
+    ],
+    'blue': [
+      products_kaizen_blue_1,
+      products_kaizen_blue_2,
+      products_kaizen_blue_3,
+      products_kaizen_blue_4,
+      products_kaizen_blue_5,
+    ],
+    'red': [
+      products_kaizen_red_1,
+      products_kaizen_red_2,
+      products_kaizen_red_3,
+      products_kaizen_red_4,
+      products_kaizen_red_5,
+    ],
+    'tan': [
+      products_kaizen_tan_1,
+      products_kaizen_tan_2,
+      products_kaizen_tan_3,
+      products_kaizen_tan_4,
+      products_kaizen_tan_5,
+    ],
+    'tosca': [
+      products_kaizen_tosca_1,
+      products_kaizen_tosca_2,
+      products_kaizen_tosca_3,
+      products_kaizen_tosca_4,
+      products_kaizen_tosca_5,
+    ],
+  },
   kanji: {
     'army': [
       products_kanji_army_id_11134207_7qul1_lhfyiaz773sg0b_resize_w900_nl,
@@ -464,6 +662,79 @@ export const productImages = {
       products_kanji_tan_morutha_6_c,
       products_kanji_tan_morutha_6_d,
       products_kanji_tan_morutha_6_e,
+    ],
+  },
+  'kaos-chio': {
+    'blue': [
+      products_kaos_chio_blue_1,
+      products_kaos_chio_blue_2,
+      products_kaos_chio_blue_untitled_1artboard_3,
+      products_kaos_chio_blue_untitled_1artboard_4,
+      products_kaos_chio_blue_untitled_1artboard_5,
+    ],
+    'yellow': [
+      products_kaos_chio_yellow_1,
+      products_kaos_chio_yellow_2,
+      products_kaos_chio_yellow_untitled_1artboard_3,
+      products_kaos_chio_yellow_untitled_1artboard_4,
+      products_kaos_chio_yellow_untitled_1artboard_5,
+    ],
+  },
+  'kaos-daiki': {
+    'brown': [
+      products_kaos_daiki_brown_1,
+      products_kaos_daiki_brown_2,
+      products_kaos_daiki_brown_untitled_1artboard_3,
+      products_kaos_daiki_brown_untitled_1artboard_4,
+      products_kaos_daiki_brown_untitled_1artboard_5,
+    ],
+    'red': [
+      products_kaos_daiki_red_1,
+      products_kaos_daiki_red_2,
+      products_kaos_daiki_red_untitled_1artboard_3,
+      products_kaos_daiki_red_untitled_1artboard_4,
+      products_kaos_daiki_red_untitled_1artboard_5,
+    ],
+    'steel-blue': [
+      products_kaos_daiki_steel_blue_1,
+      products_kaos_daiki_steel_blue_2,
+      products_kaos_daiki_steel_blue_untitled_1artboard_3,
+      products_kaos_daiki_steel_blue_untitled_1artboard_4,
+      products_kaos_daiki_steel_blue_untitled_1artboard_5,
+    ],
+  },
+  'kaos-fumio': {
+    'white': [
+      products_kaos_fumio_white_1,
+      products_kaos_fumio_white_2,
+      products_kaos_fumio_white_untitled_1artboard_3,
+      products_kaos_fumio_white_untitled_1artboard_4,
+      products_kaos_fumio_white_untitled_1artboard_5,
+    ],
+  },
+  'kaos-ken': {
+    'blue-green': [
+      products_kaos_ken_blue_green_1,
+      products_kaos_ken_blue_green_2,
+      products_kaos_ken_blue_green_untitled_1artboard_3,
+      products_kaos_ken_blue_green_untitled_1artboard_4,
+      products_kaos_ken_blue_green_untitled_1artboard_5,
+    ],
+  },
+  'kaos-kibatsu': {
+    'black': [
+      products_kaos_kibatsu_black_1,
+      products_kaos_kibatsu_black_2,
+      products_kaos_kibatsu_black_untitled_1artboard_3,
+      products_kaos_kibatsu_black_untitled_1artboard_4,
+      products_kaos_kibatsu_black_untitled_1artboard_5,
+    ],
+    'maroon': [
+      products_kaos_kibatsu_maroon_1,
+      products_kaos_kibatsu_maroon_2,
+      products_kaos_kibatsu_maroon_untitled_1artboard_3,
+      products_kaos_kibatsu_maroon_untitled_1artboard_4,
+      products_kaos_kibatsu_maroon_untitled_1artboard_5,
     ],
   },
   keiko: {
@@ -621,6 +892,29 @@ export const productImages = {
       products_yuki_yuki_khaky_3_2_,
       products_yuki_yuki_khaky_4_2_,
       products_yuki_yuki_khaky_5_4_1_,
+    ],
+  },
+  zero: {
+    'blue': [
+      products_zero_blue_1,
+      products_zero_blue_2,
+      products_zero_blue_3,
+      products_zero_blue_4,
+      products_zero_blue_5,
+    ],
+    'red': [
+      products_zero_red_1,
+      products_zero_red_2,
+      products_zero_red_3,
+      products_zero_red_4,
+      products_zero_red_5,
+    ],
+    'tosca': [
+      products_zero_tosca_1,
+      products_zero_tosca_2,
+      products_zero_tosca_3,
+      products_zero_tosca_4,
+      products_zero_tosca_5,
     ],
   },
 };

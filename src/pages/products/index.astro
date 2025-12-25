@@ -3,8 +3,24 @@ import Navigation from '../../components/Navigation.astro';
 import ProductSeriesCard from '../../components/ProductSeriesCard.astro';
 import Logo from '../../components/Logo.astro';
 import { CheckCircle, Palette, Image as ImageIcon, MessageCircle, ArrowLeft, Instagram } from '@lucide/astro';
-import { PRODUCT_SERIES } from '../../data/products';
+import { getAllCategories, getProductsByCategoryWithUniqueColors, PRODUCT_SERIES } from '../../data/products';
 import '../../styles/global.css';
+
+// Get products by category with unique colors (all products, no limit)
+const categories = getAllCategories();
+const productsByCategory = categories.map(category => ({
+  category,
+  products: getProductsByCategoryWithUniqueColors(category)
+}));
+
+// Category display names
+const categoryNames: Record<string, string> = {
+  'sandal': 'Sandal',
+  'sepatu': 'Sepatu',
+  'kaos': 'Kaos',
+  'pakaian': 'Pakaian',
+  'aksesoris': 'Aksesoris'
+};
 ---
 
 <html lang="en">
@@ -54,7 +70,7 @@ import '../../styles/global.css';
         <div class="mb-12 fade-in">
           <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
             <div>
-              <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Semua Seri</h2>
+              <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Semua Produk</h2>
               <p class="text-gray-500">Jelajahi koleksi lengkap kami</p>
             </div>
             <div class="flex items-center gap-3">
@@ -67,13 +83,24 @@ import '../../styles/global.css';
           </div>
         </div>
         
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
-          {PRODUCT_SERIES.map((series, idx) => (
-            <div class="fade-in" style={`animation-delay: ${idx * 50}ms`}>
-              <ProductSeriesCard series={series} />
+        {productsByCategory.map(({ category, products }) => (
+          <div class="mb-16 last:mb-0 fade-in">
+            <div class="flex justify-between items-center mb-8">
+              <div>
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-900">{categoryNames[category] || category}</h3>
+                <p class="text-gray-500 text-sm mt-1">{products.length} produk tersedia</p>
+              </div>
             </div>
-          ))}
-        </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+              {products.map((series, idx) => (
+                <div class="fade-in" style={`animation-delay: ${idx * 50}ms`}>
+                  <ProductSeriesCard series={series} />
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
 
@@ -148,11 +175,18 @@ import '../../styles/global.css';
         </div>
       </div>
       
-      <div class="max-w-7xl mx-auto px-4 pt-10 border-t border-gray-100 flex flex-wrap justify-between gap-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-        <p>© 2025 Morutha Kids Footwear. All rights reserved.</p>
-        <div class="flex gap-8">
-          <a href="#" class="hover:text-gray-900 transition-colors">Privasi</a>
-          <a href="#" class="hover:text-gray-900 transition-colors">Syarat</a>
+      <div class="max-w-7xl mx-auto px-4 pt-10 border-t border-gray-100">
+        <div class="flex flex-wrap justify-between gap-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">
+          <p>© 2025 Morutha Kids Footwear. All rights reserved.</p>
+          <div class="flex gap-8">
+            <a href="#" class="hover:text-gray-900 transition-colors">Privasi</a>
+            <a href="#" class="hover:text-gray-900 transition-colors">Syarat</a>
+          </div>
+        </div>
+        <div class="text-center">
+          <p class="text-[9px] text-gray-300 font-normal lowercase tracking-normal">
+            Developed by <a href="https://landingo.id" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#00a8a8] transition-colors underline">Landingo</a>
+          </p>
         </div>
       </div>
     </footer>

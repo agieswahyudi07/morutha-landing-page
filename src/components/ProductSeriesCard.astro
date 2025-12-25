@@ -21,12 +21,23 @@ function getColorValue(color: string): string {
     'pink': '#ffc0cb',
     'blue': '#0000ff',
     'brown': '#8b4513',
+    'white': '#ffffff',
+    'yellow': '#ffd700',
+    'red': '#dc2626',
+    'maroon': '#800000',
+    'tosca': '#40e0d0',
   };
   return colorMap[color] || '#cccccc';
 }
 
 const { series } = Astro.props;
-const featuredVariant = series.colorVariants.find(v => v.id.includes(series.featuredColor || 'black')) || series.colorVariants[0];
+// Find variant by color name (more accurate matching)
+const featuredColor = series.featuredColor || 'black';
+const featuredVariant = series.colorVariants.find(v => 
+  v.color === featuredColor || 
+  v.name.toLowerCase().includes(featuredColor.toLowerCase()) ||
+  v.id.toLowerCase().includes(featuredColor.toLowerCase())
+) || series.colorVariants[0];
 const featuredImage = featuredVariant?.featuredImage;
 ---
 

@@ -61,8 +61,9 @@ function generateImports() {
   imports += '// Model Images\n';
   modelFiles.forEach((file) => {
     const importName = generateImportName(file);
+    // Path relative to src/data/image-imports.ts (one level up to src, then to images)
     const relativePath = path.relative(path.join(__dirname, '../src'), file).replace(/\\/g, '/');
-    imports += `import ${importName} from '${relativePath}';\n`;
+    imports += `import ${importName} from '../${relativePath}';\n`;
   });
 
   imports += '\n// Product Images\n';
@@ -85,8 +86,9 @@ function generateImports() {
       }
       
       const importName = generateImportName(file);
+      // Path relative to src/data/image-imports.ts (one level up to src, then to images)
       const relativePath = path.relative(path.join(__dirname, '../src'), file).replace(/\\/g, '/');
-      seriesMap[series][color].push({ importName, relativePath });
+      seriesMap[series][color].push({ importName, relativePath: `../${relativePath}` });
     }
   });
 
@@ -110,7 +112,9 @@ function generateImports() {
 
   imports += 'export const productImages = {\n';
   Object.keys(seriesMap).forEach((series) => {
-    imports += `  ${series}: {\n`;
+    // Add quotes for series keys that contain dashes
+    const seriesKey = series.includes('-') ? `'${series}'` : series;
+    imports += `  ${seriesKey}: {\n`;
     Object.keys(seriesMap[series]).forEach((color) => {
       const cleanColor = color.replace(/^\d+\s*/, '').replace(/\s+/g, '_').toLowerCase();
       imports += `    '${cleanColor}': [\n`;

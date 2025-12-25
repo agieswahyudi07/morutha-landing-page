@@ -61,10 +61,14 @@ export interface ColorVariant {
   featuredImage: ImageMetadata; // First image as featured
 }
 
+// Product categories
+export type ProductCategory = 'sandal' | 'sepatu' | 'kaos' | 'pakaian' | 'aksesoris';
+
 export interface ProductSeries {
   id: string;
   name: string;
   description: string;
+  category: ProductCategory; // Product category
   colorVariants: ColorVariant[];
   featuredColor?: string; // Default color to show
   price: number;
@@ -78,6 +82,7 @@ export const PRODUCT_SERIES: ProductSeries[] = [
     id: 'haruki',
     name: 'Haruki',
     description: 'Kenyamanan klasik dengan gaya modern',
+    category: 'sandal',
     price: 189000,
     featuredColor: 'black',
     colorVariants: [
@@ -129,6 +134,7 @@ export const PRODUCT_SERIES: ProductSeries[] = [
     id: 'hikaru',
     name: 'Hikaru',
     description: 'Desain berani dan petualang',
+    category: 'sandal',
     price: 199000,
     tag: 'TERLARIS',
     featuredColor: 'black',
@@ -181,6 +187,7 @@ export const PRODUCT_SERIES: ProductSeries[] = [
     id: 'junko',
     name: 'Junko',
     description: 'Menyenangkan dan penuh warna',
+    category: 'sandal',
     price: 175000,
     featuredColor: 'pink-blue',
     colorVariants: [
@@ -225,6 +232,7 @@ export const PRODUCT_SERIES: ProductSeries[] = [
     id: 'kaiketsu',
     name: 'Kaiketsu',
     description: 'Tahan lama dan kokoh',
+    category: 'sandal',
     price: 210000,
     featuredColor: 'black',
     colorVariants: [
@@ -269,6 +277,7 @@ export const PRODUCT_SERIES: ProductSeries[] = [
     id: 'kanji',
     name: 'Kanji',
     description: 'Elegan abadi',
+    category: 'sandal',
     price: 195000,
     featuredColor: 'navy',
     colorVariants: [
@@ -306,6 +315,7 @@ export const PRODUCT_SERIES: ProductSeries[] = [
     id: 'keiko',
     name: 'Keiko',
     description: 'Kenyamanan bertemu gaya',
+    category: 'sandal',
     price: 185000,
     featuredColor: 'navy',
     colorVariants: [
@@ -350,6 +360,7 @@ export const PRODUCT_SERIES: ProductSeries[] = [
     id: 'orca',
     name: 'Orca',
     description: 'Berani dan modern',
+    category: 'sandal',
     price: 200000,
     featuredColor: 'black',
     colorVariants: [
@@ -387,6 +398,7 @@ export const PRODUCT_SERIES: ProductSeries[] = [
     id: 'tadashi',
     name: 'Tadashi',
     description: 'Klasik dan elegan',
+    category: 'sandal',
     price: 190000,
     featuredColor: 'black',
     colorVariants: [
@@ -417,6 +429,7 @@ export const PRODUCT_SERIES: ProductSeries[] = [
     id: 'yoshiro',
     name: 'Yoshiro',
     description: 'Desain siap petualangan',
+    category: 'sandal',
     price: 205000,
     featuredColor: 'navy',
     colorVariants: [
@@ -454,6 +467,7 @@ export const PRODUCT_SERIES: ProductSeries[] = [
     id: 'yuki',
     name: 'Yuki',
     description: 'Lembut dan menyenangkan',
+    category: 'sandal',
     price: 180000,
     featuredColor: 'candy',
     colorVariants: [
@@ -494,15 +508,378 @@ export const PRODUCT_SERIES: ProductSeries[] = [
       },
     ],
   },
+  // Kaos Products
+  {
+    id: 'kaos-chio',
+    name: 'Kaos Chio',
+    description: 'Kaos nyaman dengan desain modern',
+    category: 'kaos',
+    price: 89000,
+    featuredColor: 'blue',
+    colorVariants: [
+      {
+        id: 'kaos-chio-blue',
+        name: 'Blue',
+        color: 'blue',
+        images: getColorVariantImages('kaos-chio', 'blue'),
+        featuredImage: getColorVariantImages('kaos-chio', 'blue')[0] || null as any,
+      },
+      {
+        id: 'kaos-chio-yellow',
+        name: 'Yellow',
+        color: 'yellow',
+        images: getColorVariantImages('kaos-chio', 'yellow'),
+        featuredImage: getColorVariantImages('kaos-chio', 'yellow')[0] || null as any,
+      },
+    ],
+  },
+  {
+    id: 'kaos-daiki',
+    name: 'Kaos Daiki',
+    description: 'Kaos casual untuk aktivitas sehari-hari',
+    category: 'kaos',
+    price: 95000,
+    featuredColor: 'red',
+    colorVariants: [
+      {
+        id: 'kaos-daiki-red',
+        name: 'Red',
+        color: 'red',
+        images: getColorVariantImages('kaos-daiki', 'red'),
+        featuredImage: getColorVariantImages('kaos-daiki', 'red')[0] || null as any,
+      },
+      {
+        id: 'kaos-daiki-steel-blue',
+        name: 'Steel Blue',
+        color: 'blue',
+        images: getColorVariantImages('kaos-daiki', 'steel-blue'),
+        featuredImage: getColorVariantImages('kaos-daiki', 'steel-blue')[0] || null as any,
+      },
+      {
+        id: 'kaos-daiki-brown',
+        name: 'Brown',
+        color: 'brown',
+        images: getColorVariantImages('kaos-daiki', 'brown'),
+        featuredImage: getColorVariantImages('kaos-daiki', 'brown')[0] || null as any,
+      },
+    ],
+  },
+  {
+    id: 'kaos-fumio',
+    name: 'Kaos Fumio',
+    description: 'Kaos klasik dengan kualitas premium',
+    category: 'kaos',
+    price: 92000,
+    featuredColor: 'white',
+    colorVariants: [
+      {
+        id: 'kaos-fumio-white',
+        name: 'White',
+        color: 'white',
+        images: getColorVariantImages('kaos-fumio', 'white'),
+        featuredImage: getColorVariantImages('kaos-fumio', 'white')[0] || null as any,
+      },
+    ],
+  },
+  {
+    id: 'kaos-ken',
+    name: 'Kaos Ken',
+    description: 'Kaos dengan warna unik dan menarik',
+    category: 'kaos',
+    price: 88000,
+    featuredColor: 'blue-green',
+    colorVariants: [
+      {
+        id: 'kaos-ken-blue-green',
+        name: 'Blue Green',
+        color: 'blue',
+        images: getColorVariantImages('kaos-ken', 'blue-green'),
+        featuredImage: getColorVariantImages('kaos-ken', 'blue-green')[0] || null as any,
+      },
+    ],
+  },
+  {
+    id: 'kaos-kibatsu',
+    name: 'Kaos Kibatsu',
+    description: 'Kaos dengan desain berani dan stylish',
+    category: 'kaos',
+    price: 90000,
+    featuredColor: 'black',
+    colorVariants: [
+      {
+        id: 'kaos-kibatsu-black',
+        name: 'Black',
+        color: 'black',
+        images: getColorVariantImages('kaos-kibatsu', 'black'),
+        featuredImage: getColorVariantImages('kaos-kibatsu', 'black')[0] || null as any,
+      },
+      {
+        id: 'kaos-kibatsu-maroon',
+        name: 'Maroon',
+        color: 'brown',
+        images: getColorVariantImages('kaos-kibatsu', 'maroon'),
+        featuredImage: getColorVariantImages('kaos-kibatsu', 'maroon')[0] || null as any,
+      },
+    ],
+  },
+  // New Sandal Products
+  {
+    id: 'zero',
+    name: 'Zero',
+    description: 'Desain modern dan fungsional',
+    category: 'sandal',
+    price: 185000,
+    featuredColor: 'blue',
+    colorVariants: [
+      {
+        id: 'zero-blue',
+        name: 'Blue',
+        color: 'blue',
+        images: getColorVariantImages('zero', 'blue'),
+        featuredImage: getColorVariantImages('zero', 'blue')[0] || null as any,
+      },
+      {
+        id: 'zero-red',
+        name: 'Red',
+        color: 'red',
+        images: getColorVariantImages('zero', 'red'),
+        featuredImage: getColorVariantImages('zero', 'red')[0] || null as any,
+      },
+      {
+        id: 'zero-tosca',
+        name: 'Tosca',
+        color: 'tosca',
+        images: getColorVariantImages('zero', 'tosca'),
+        featuredImage: getColorVariantImages('zero', 'tosca')[0] || null as any,
+      },
+    ],
+  },
+  {
+    id: 'goru',
+    name: 'Goru',
+    description: 'Kuat dan tahan lama',
+    category: 'sandal',
+    price: 195000,
+    featuredColor: 'army',
+    colorVariants: [
+      {
+        id: 'goru-army',
+        name: 'Army',
+        color: 'green',
+        images: getColorVariantImages('goru', 'army'),
+        featuredImage: getColorVariantImages('goru', 'army')[0] || null as any,
+      },
+      {
+        id: 'goru-black',
+        name: 'Black',
+        color: 'black',
+        images: getColorVariantImages('goru', 'black'),
+        featuredImage: getColorVariantImages('goru', 'black')[0] || null as any,
+      },
+      {
+        id: 'goru-blue',
+        name: 'Blue',
+        color: 'blue',
+        images: getColorVariantImages('goru', 'blue'),
+        featuredImage: getColorVariantImages('goru', 'blue')[0] || null as any,
+      },
+      {
+        id: 'goru-red',
+        name: 'Red',
+        color: 'red',
+        images: getColorVariantImages('goru', 'red'),
+        featuredImage: getColorVariantImages('goru', 'red')[0] || null as any,
+      },
+    ],
+  },
+  {
+    id: 'hiro',
+    name: 'Hiro',
+    description: 'Klasik dan elegan',
+    category: 'sandal',
+    price: 190000,
+    featuredColor: 'tan',
+    colorVariants: [
+      {
+        id: 'hiro-tan',
+        name: 'Tan',
+        color: 'tan',
+        images: getColorVariantImages('hiro', 'tan'),
+        featuredImage: getColorVariantImages('hiro', 'tan')[0] || null as any,
+      },
+    ],
+  },
+  {
+    id: 'kaizen',
+    name: 'Kaizen',
+    description: 'Kontinyu improvement dalam desain',
+    category: 'sandal',
+    price: 200000,
+    featuredColor: 'army',
+    colorVariants: [
+      {
+        id: 'kaizen-army',
+        name: 'Army',
+        color: 'green',
+        images: getColorVariantImages('kaizen', 'army'),
+        featuredImage: getColorVariantImages('kaizen', 'army')[0] || null as any,
+      },
+      {
+        id: 'kaizen-black',
+        name: 'Black',
+        color: 'black',
+        images: getColorVariantImages('kaizen', 'black'),
+        featuredImage: getColorVariantImages('kaizen', 'black')[0] || null as any,
+      },
+      {
+        id: 'kaizen-blue',
+        name: 'Blue',
+        color: 'blue',
+        images: getColorVariantImages('kaizen', 'blue'),
+        featuredImage: getColorVariantImages('kaizen', 'blue')[0] || null as any,
+      },
+      {
+        id: 'kaizen-red',
+        name: 'Red',
+        color: 'red',
+        images: getColorVariantImages('kaizen', 'red'),
+        featuredImage: getColorVariantImages('kaizen', 'red')[0] || null as any,
+      },
+      {
+        id: 'kaizen-tan',
+        name: 'Tan',
+        color: 'tan',
+        images: getColorVariantImages('kaizen', 'tan'),
+        featuredImage: getColorVariantImages('kaizen', 'tan')[0] || null as any,
+      },
+      {
+        id: 'kaizen-tosca',
+        name: 'Tosca',
+        color: 'tosca',
+        images: getColorVariantImages('kaizen', 'tosca'),
+        featuredImage: getColorVariantImages('kaizen', 'tosca')[0] || null as any,
+      },
+    ],
+  },
 ];
 
-// Helper function to get featured products (first 4-6 series)
+// Helper function to normalize color names for comparison
+function normalizeColorName(color: string): string {
+  const normalized = color.toLowerCase();
+  // Map similar colors to a common name
+  if (normalized.includes('army') || normalized.includes('green')) return 'green';
+  if (normalized.includes('candy') || normalized.includes('pink')) return 'pink';
+  if (normalized.includes('navy') || normalized.includes('blue')) return 'blue';
+  if (normalized.includes('grey') || normalized.includes('gray')) return 'grey';
+  return normalized;
+}
+
+// Helper function to get unique color for each series
+function getUniqueFeaturedColor(series: ProductSeries, usedColors: Set<string>): string {
+  // Priority order of colors to display (most visually distinct first)
+  const colorPriority = ['pink', 'candy', 'army', 'green', 'blue', 'navy', 'camel', 'tan', 'khaki', 'brown', 'grey', 'black'];
+  
+  // First, try to find a color from priority list that's available and not used
+  for (const priorityColor of colorPriority) {
+    const availableVariant = series.colorVariants.find(v => {
+      const variantColor = normalizeColorName(v.color);
+      const variantName = normalizeColorName(v.name);
+      const priorityNormalized = normalizeColorName(priorityColor);
+      
+      return variantColor === priorityNormalized || 
+             variantName.includes(priorityNormalized) ||
+             v.id.toLowerCase().includes(priorityColor);
+    });
+    
+    if (availableVariant) {
+      const normalizedColor = normalizeColorName(availableVariant.color);
+      if (!usedColors.has(normalizedColor)) {
+        usedColors.add(normalizedColor);
+        return availableVariant.color; // Return original color value
+      }
+    }
+  }
+  
+  // If no priority color available, find any unused color
+  for (const variant of series.colorVariants) {
+    const normalizedColor = normalizeColorName(variant.color);
+    if (!usedColors.has(normalizedColor)) {
+      usedColors.add(normalizedColor);
+      return variant.color;
+    }
+  }
+  
+  // Fallback: use the first available color or default
+  return series.colorVariants[0]?.color || series.featuredColor || 'black';
+}
+
+// Helper function to get featured products with unique colors
 export function getFeaturedProducts(count: number = 6): ProductSeries[] {
-  return PRODUCT_SERIES.slice(0, count);
+  const series = PRODUCT_SERIES.slice(0, count);
+  const usedColors = new Set<string>();
+  
+  // Assign unique colors to each series
+  // Note: getUniqueFeaturedColor already adds to usedColors internally
+  return series.map(s => {
+    const uniqueColor = getUniqueFeaturedColor(s, usedColors);
+    
+    // Return a copy of the series with updated featuredColor
+    return {
+      ...s,
+      featuredColor: uniqueColor
+    };
+  });
+}
+
+// Helper function to get all products with unique colors
+export function getAllProductsWithUniqueColors(): ProductSeries[] {
+  const usedColors = new Set<string>();
+  
+  // Assign unique colors to each series
+  // Note: getUniqueFeaturedColor already adds to usedColors internally
+  return PRODUCT_SERIES.map(s => {
+    const uniqueColor = getUniqueFeaturedColor(s, usedColors);
+    
+    // Return a copy of the series with updated featuredColor
+    return {
+      ...s,
+      featuredColor: uniqueColor
+    };
+  });
 }
 
 // Helper function to get product by series ID
 export function getProductBySeries(seriesId: string): ProductSeries | undefined {
   return PRODUCT_SERIES.find(series => series.id === seriesId);
+}
+
+// Helper function to get all available categories
+export function getAllCategories(): ProductCategory[] {
+  const categories = new Set<ProductCategory>();
+  PRODUCT_SERIES.forEach(series => {
+    if (series.category) {
+      categories.add(series.category);
+    }
+  });
+  return Array.from(categories);
+}
+
+// Helper function to get products by category
+export function getProductsByCategory(category: ProductCategory): ProductSeries[] {
+  return PRODUCT_SERIES.filter(series => series.category === category);
+}
+
+// Helper function to get products by category with unique colors
+export function getProductsByCategoryWithUniqueColors(category: ProductCategory): ProductSeries[] {
+  const products = getProductsByCategory(category);
+  const usedColors = new Set<string>();
+  
+  return products.map(s => {
+    const uniqueColor = getUniqueFeaturedColor(s, usedColors);
+    return {
+      ...s,
+      featuredColor: uniqueColor
+    };
+  });
 }
 
